@@ -1,0 +1,45 @@
+body{
+  margin: 0 auto ;
+}
+
+#logo {
+  height: 50px;
+  width: 50px;
+}
+
+header {
+  padding-left: 60px;
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+nav{
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#greet{
+  padding-left: 300px;
+  padding-top: 70px;
+}
+
+#okvir {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#okvir img{
+  width: 200px;
+  height: 300px;
+}
+
+.user{
+  padding: 10px;
+}
+#k{
+  text-align: center;
+}
