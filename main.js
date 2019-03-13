@@ -429,7 +429,7 @@ for (let i = 0; i < video.filmovi.length; i++) {
 
 }
 
-document.addEventListener("input",function(){
+/*document.addEventListener("input",function(){
   okvir.innerHTML='';
   let str=document.getElementById("pretraga").value;
   console.log(str);
@@ -444,4 +444,75 @@ document.addEventListener("input",function(){
     </div> <br>` ;
     
   }
-});
+});*/
+
+const url = 'https://baza-filmova.herokuapp.com/filmovi/';
+
+let godina;
+let naziv;
+let slika;
+let id;
+
+fetch(url)
+    .then(response => response.json())
+    .then(function (response) {
+        console.log(response);
+
+        let prostorUpisaFilma = document.getElementById('filmska_baza');
+        let sablonUpisaFilma = ``;
+
+        for (let i = 0; i < response.length; i++) {
+
+            godina = response[i].godina;
+            naziv = response[i].naziv;
+            slika = response[i].slika;
+            id = response[i].id;
+            console.log(naziv + " " + naziv.length);
+            if (naziv != "Budjenje pacova")
+                sablonUpisaFilma += `
+                <div class="movie">
+                    <img src=${slika} alt="Movie poster" width="300px" height="450px" class="movie-img">
+                    <div class="movie-body">
+                        <center><h3>${naziv}</h3></center>
+                        <p>${godina}</p>
+                        
+                    </div>
+                </div>
+            `;
+            else sablonUpisaFilma += `
+                <div class="movie">
+                    <img src="slike/BUDJENJE-PACOVA.jpg" alt="Movie poster" width="300px" height="450px" class="movie-img">
+                    <div class="movie-body">
+                        <center><h3>${naziv}</h3></center>
+                        <p>${godina}</p>
+                        
+                    </div>
+                </div>
+            `;
+
+            // console.log(sablonUpisaFilma);
+        }
+        prostorUpisaFilma.innerHTML = sablonUpisaFilma;
+
+        document.addEventListener("input", function () {
+            prostorUpisaFilma.innerHTML = '';
+            let str = document.getElementById("pronadji").value;
+            console.log(str);
+            for (i = 0; i < response.length; i++)
+                if (response[i].naziv.search(str) != -1) 
+            
+                {
+                    prostorUpisaFilma.innerHTML +=
+                        `<div >
+    
+    
+    <img src="${response[i].slika}" width="300px" height="450px"> </img>
+   <center><h3> ${response[i].naziv}  <h3></center>
+   <p> ${response[i].godina}  </p>
+    </div> <br>` ;
+
+                }
+                   
+        });
+
+    });
