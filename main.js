@@ -412,7 +412,7 @@ const video = {
   ]
 }
 
-console.log(video);
+/*console.log(video);
 
 const okvir = document.getElementById("okvir")
 
@@ -428,7 +428,7 @@ for (let i = 0; i < video.filmovi.length; i++) {
     </div>`
 
 }
-
+*/
 /*document.addEventListener("input",function(){
   okvir.innerHTML='';
   let str=document.getElementById("pretraga").value;
