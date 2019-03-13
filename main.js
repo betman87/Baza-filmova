@@ -412,39 +412,7 @@ const video = {
   ]
 }
 
-/*console.log(video);
 
-const okvir = document.getElementById("okvir")
-
-for (let i = 0; i < video.filmovi.length; i++) {
-
-  okvir.innerHTML +=
-    `<div class="user">
-    <h2> ${video.filmovi[i].naziv}  <h2>
-    <h4> ${video.filmovi[i].godina}  </h4>
-    <img src="${video.filmovi[i].slika}"> </img>
-   
-
-    </div>`
-
-}
-*/
-/*document.addEventListener("input",function(){
-  okvir.innerHTML='';
-  let str=document.getElementById("pretraga").value;
-  console.log(str);
-  for ( i = 0; i < video.filmovi.length; i++)
-  if(video.filmovi[i].naziv.search(str)!=-1) {okvir.innerHTML +=
-  `<div >
-    <h2> ${video.filmovi[i].naziv}  <h2>
-    <h4> ${video.filmovi[i].godina}  </h4>
-    <img src="${video.filmovi[i].slika}"> </img>
-   
-
-    </div> <br>` ;
-    
-  }
-});*/
 
 const url = 'https://baza-filmova.herokuapp.com/filmovi/';
 
