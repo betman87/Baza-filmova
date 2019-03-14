@@ -465,11 +465,11 @@ fetch(url)
         document.addEventListener("input", function () {
             prostorUpisaFilma.innerHTML = '';
             let str = document.getElementById("pronadji").value;
-            console.log(str);
-            for (i = 0; i < response.length; i++)
-                if (response[i].naziv.search(str) != -1) 
-            
-                {
+            // console.log(str);
+            for (i = 0; i < response.length; i++) {
+                let r = response[i].naziv.toUpperCase();
+                str = str.toUpperCase(); //pretraga radi bez obzira na velicinu slova unetu u pretragu              
+                if (r.search(str) != -1) {
                     prostorUpisaFilma.innerHTML +=
                         `<div >
     
@@ -480,7 +480,8 @@ fetch(url)
     </div> <br>` ;
 
                 }
-                   
+
+            }
         });
 
     });
